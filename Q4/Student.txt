@@ -1,0 +1,5 @@
+WAD0001DIA|Thomson Lee Ah Beng|3.50
+WAD0002DCN|Alex Ho Chin Chye|2.60
+WAD0033DIB|Annie Fernandez|3.90
+WAD0054DCO|Charjith Singh|3.75
+WAD0009DIT|Tan Philip|1.30
