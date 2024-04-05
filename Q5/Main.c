@@ -4,7 +4,7 @@
 int main() {
 	FILE *studentFilePtr, *bookPrizeFilePtr;
 	studentFilePtr = fopen("Student.txt", "r");
-	bookPrizeFilePtr = fopen("BookPrize.txt", "a");
+	bookPrizeFilePtr = fopen("BookPrize.txt", "w");
 	if (studentFilePtr == NULL) {
 		printf("Error reading Student.txt\n");
 		exit(-1);
@@ -24,13 +24,14 @@ int main() {
 	float cgpa;
 	int i = 0;
 	while (fscanf(studentFilePtr, "%[^|]|%[^|]|%f\n", studentId, studentName, &cgpa) == 3) {
-		printf("%-10s   %-20s   %.2f\n", studentId, studentName, cgpa);
 
 		if (cgpa >= 3.5) {
+			printf("%-10s   %-20s   %.2f\n", studentId, studentName, cgpa);
 			fprintf(bookPrizeFilePtr, "%s|%s|%.2f\n", studentId, studentName, cgpa);
 			++i;
 		}
 	}
 	fclose(studentFilePtr);
 	fclose(bookPrizeFilePtr);
+	printf("%d record(s) copied to BookPrize.txt\n", i);
 }
